@@ -165,6 +165,29 @@ const calcWin = winner => {
     playerTwoWins += 1
   }
 }
+
+/* 1) should set player two's move types to valid move types
+2) should set player two's move values to valid move values
+3) should set player two's move values to three values that sum to ninety-nine */
+
 const setComputerMoves = () => {
 
+    playerTwoMoveOneType = setMoves(1);
+    playerTwoMoveOneValue = Math.floor(Math.random() * Math.floor(30));
+    playerTwoMoveTwoType = setMoves(2);
+    playerTwoMoveTwoValue = Math.floor(Math.random() * Math.floor(30));
+    playerTwoMoveThreeType = setMoves(3);
+    playerTwoMoveThreeValue = Math.floor(Math.random() * Math.floor(39));
+
 }
+
+ function setMoves(round) {
+   let move = Math.floor(Math.random() * Math.floor(round));
+   if (move === 1) {
+     return 'rock'
+   } else if (move === 2) {
+     return 'paper'
+   } else if (move === 3){
+     return 'scissors'
+   }
+ }
